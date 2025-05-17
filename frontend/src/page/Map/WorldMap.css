@@ -1,0 +1,93 @@
+/* Global styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 50px;
+  letter-spacing: 1px;
+}
+
+.map-container {
+  position: relative;
+  max-width: 100%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.world-map {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.world-map:hover {
+  transform: scale(1.05);
+}
+
+.marker {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #00bcd4;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.marker:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: opacity 0.2s ease;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+}
+
+/* Smooth hover effect for marker */
+.marker:hover {
+  background-color: #ff5722;
+}
+
+.map-page {
+  padding: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .world-map {
+    width: 100%;
+  }
+}
